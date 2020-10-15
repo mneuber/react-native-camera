@@ -24,7 +24,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.reactnative.camera.R;
+import org.reactnative.camera.standalone.R;
 
 class SurfaceViewPreview extends PreviewImpl {
 
