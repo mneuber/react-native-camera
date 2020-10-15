@@ -3,7 +3,7 @@ package org.reactnative.facedetector;
 import android.content.Context;
 import android.util.SparseArray;
 
-import org.reactnative.camera.utils.ImageDimensions;
+import org.reactnative.camera.standalone.utils.ImageDimensions;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
 import org.reactnative.frame.RNFrame;

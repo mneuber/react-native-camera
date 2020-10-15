@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.SparseArray;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-import org.reactnative.camera.utils.ImageDimensions;
+import org.reactnative.camera.standalone.utils.ImageDimensions;
 import org.reactnative.frame.RNFrame;
 
 public class RNBarcodeDetector {

@@ -1,4 +1,4 @@
-package org.reactnative.camera.tasks;
+package org.reactnative.camera.standalone.tasks;
 
 //import android.graphics.Point;
 import android.graphics.Rect;
@@ -15,7 +15,7 @@ import com.google.mlkit.vision.common.InputImage;
 
 import org.reactnative.barcodedetector.BarcodeFormatUtils;
 import org.reactnative.barcodedetector.RNBarcodeDetector;
-import org.reactnative.camera.utils.ImageDimensions;
+import org.reactnative.camera.standalone.utils.ImageDimensions;
 
 import java.util.List;
 

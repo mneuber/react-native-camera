@@ -1,4 +1,4 @@
-package org.reactnative.camera.tasks;
+package org.reactnative.camera.standalone.tasks;
 
 import android.graphics.Rect;
 import android.util.Log;
@@ -18,7 +18,7 @@ import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 
-import org.reactnative.camera.utils.ImageDimensions;
+import org.reactnative.camera.standalone.utils.ImageDimensions;
 
 import java.util.List;
 

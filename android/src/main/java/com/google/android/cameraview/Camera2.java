@@ -59,7 +59,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.SortedSet;
 
-import org.reactnative.camera.utils.ObjectUtils;
+import org.reactnative.camera.standalone.utils.ObjectUtils;
 
 
 

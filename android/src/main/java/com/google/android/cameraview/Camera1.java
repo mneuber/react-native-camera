@@ -40,7 +40,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.reactnative.camera.utils.ObjectUtils;
+import org.reactnative.camera.standalone.utils.ObjectUtils;
 
 
 @SuppressWarnings("deprecation")
