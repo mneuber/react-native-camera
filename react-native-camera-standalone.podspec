@@ -3,7 +3,7 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 Pod::Spec.new do |s|
-  s.name           = 'react-native-camera'
+  s.name           = 'react-native-camera-standalone'
   s.version        = package['version']
   s.summary        = package['description']
   s.description    = package['description']
@@ -24,27 +24,27 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "TextDetector" do |ss|
-    ss.dependency 'react-native-camera/RN'
-    ss.dependency 'react-native-camera/RCT'
+    ss.dependency 'react-native-camera-standalone/RN'
+    ss.dependency 'react-native-camera-standalone/RCT'
     ss.dependency 'GoogleMLKit/TextRecognition'
 
   end
 
   s.subspec "FaceDetectorMLKit" do |ss|
-    ss.dependency 'react-native-camera/RN'
-    ss.dependency 'react-native-camera/RCT'
+    ss.dependency 'react-native-camera-standalone/RN'
+    ss.dependency 'react-native-camera-standalone/RCT'
     ss.dependency 'GoogleMLKit/FaceDetection'
   end
   
   s.subspec "BarcodeDetectorMLKit" do |ss|
-    ss.dependency 'react-native-camera/RN'
-    ss.dependency 'react-native-camera/RCT'
+    ss.dependency 'react-native-camera-standalone/RN'
+    ss.dependency 'react-native-camera-standalone/RCT'
     ss.dependency 'GoogleMLKit/BarcodeScanning'
   end
 
   s.subspec "LabelDetectorMLKit" do |ss|
-    ss.dependency 'react-native-camera/RN'
-    ss.dependency 'react-native-camera/RCT'
+    ss.dependency 'react-native-camera-standalone/RN'
+    ss.dependency 'react-native-camera-standalone/RCT'
     ss.dependency 'GoogleMLKit/ImageLabeling'
   end
 
