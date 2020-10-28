@@ -1,14 +1,14 @@
 #import "RNCamera.h"
 #import "RNCameraManager.h"
-#import "RNFileSystem.h"
-#import "RNImageUtils.h"
+#import "RNFileSystemStandalone.h"
+#import "RNImageUtilsStandalone.h"
 #import <React/RCTBridge.h>
 #import <React/RCTUIManager.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 #import <React/UIView+React.h>
-#import "RNCustomWhiteBalanceSettings.h"
+#import "RNCustomWhiteBalanceSettingsStandalone.h"
 
 @implementation RNCameraManager
 
@@ -246,7 +246,7 @@ RCT_CUSTOM_VIEW_PROPERTY(whiteBalance, id, RNCamera)
 {
     if ([json isKindOfClass: [NSDictionary class]]) {
         NSDictionary *params = [RCTConvert NSDictionary:json];
-        RNCustomWhiteBalanceSettings *settings = [RNCustomWhiteBalanceSettings new];
+        RNCustomWhiteBalanceSettingsStandalone *settings = [RNCustomWhiteBalanceSettingsStandalone new];
         settings.temperature = [params[@"temperature"] floatValue];
         settings.tint = [params[@"tint"] floatValue];
         settings.redGainOffset = [params[@"redGainOffset"] floatValue];

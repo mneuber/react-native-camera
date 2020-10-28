@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "RNCameraManager.h"
 
-@interface RNCameraUtils : NSObject
+@interface RNCameraUtilsStandalone : NSObject
 
 // Camera utilities
 + (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position;

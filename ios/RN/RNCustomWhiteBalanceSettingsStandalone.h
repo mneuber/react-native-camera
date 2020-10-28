@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RNCustomWhiteBalanceSettings : NSObject
+@interface RNCustomWhiteBalanceSettingsStandalone : NSObject
 
 @property(nonatomic, assign) float temperature;
 @property(nonatomic, assign) float tint;

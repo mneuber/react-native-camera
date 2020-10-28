@@ -5,9 +5,9 @@
 //  Created by Joao Guilherme Daros Fidelis on 19/01/18.
 //
 
-#import "RNImageUtils.h"
+#import "RNImageUtilsStandalone.h"
 
-@implementation RNImageUtils
+@implementation RNImageUtilsStandalone
 
 + (UIImage *)generatePhotoOfSize:(CGSize)size
 {

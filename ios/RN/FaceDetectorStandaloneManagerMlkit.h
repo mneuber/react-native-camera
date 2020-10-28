@@ -20,7 +20,7 @@
   };
 #endif
 
-  @interface FaceDetectorManagerMlkit : NSObject
+  @interface FaceDetectorStandaloneManagerMlkit : NSObject
   typedef void(^postRecognitionBlock)(NSArray *faces);
 
   - (instancetype)init;

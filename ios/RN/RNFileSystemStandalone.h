@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RNFileSystem : NSObject
+@interface RNFileSystemStandalone : NSObject
 
 + (BOOL)ensureDirExistsWithPath:(NSString *)path;
 + (NSString *)generatePathInDirectory:(NSString *)directory withExtension:(NSString *)extension;

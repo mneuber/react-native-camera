@@ -6,18 +6,18 @@
 //
 //
 
-#import "RNSensorOrientationChecker.h"
+#import "RNSensorOrientationCheckerStandalone.h"
 #import <CoreMotion/CoreMotion.h>
 
 
-@interface RNSensorOrientationChecker ()
+@interface RNSensorOrientationCheckerStandalone ()
 
 @property (strong, nonatomic) CMMotionManager * motionManager;
 @property (strong, nonatomic) RNSensorCallback orientationCallback;
 
 @end
 
-@implementation RNSensorOrientationChecker
+@implementation RNSensorOrientationCheckerStandalone
 
 - (instancetype)init
 {

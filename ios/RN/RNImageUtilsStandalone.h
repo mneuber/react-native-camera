@@ -9,7 +9,7 @@
 #import <CoreMedia/CoreMedia.h>
 #import <Foundation/Foundation.h>
 
-@interface RNImageUtils : NSObject
+@interface RNImageUtilsStandalone : NSObject
 
 + (UIImage *)generatePhotoOfSize:(CGSize)size;
 + (UIImage *)cropImage:(UIImage *)image toRect:(CGRect)rect;

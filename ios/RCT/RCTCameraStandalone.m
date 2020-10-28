@@ -1,6 +1,6 @@
 #import <React/RCTBridge.h>
-#import "RCTCamera.h"
-#import "RCTCameraManager.h"
+#import "RCTCameraStandalone.h"
+#import "RCTCameraStandaloneManager.h"
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 #import <React/RCTEventDispatcher.h>
@@ -10,14 +10,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CameraFocusSquare.h"
 
-@interface RCTCamera ()
+@interface RCTCameraStandalone ()
 
-@property (nonatomic, weak) RCTCameraManager *manager;
+@property (nonatomic, weak) RCTCameraStandaloneManager *manager;
 @property (nonatomic, weak) RCTBridge *bridge;
 
 @end
 
-@implementation RCTCamera
+@implementation RCTCameraStandalone
 {
   BOOL _multipleTouches;
   BOOL _onFocusChanged;
@@ -61,7 +61,7 @@
   }
 }
 
-- (id)initWithManager:(RCTCameraManager*)manager bridge:(RCTBridge *)bridge
+- (id)initWithManager:(RCTCameraStandaloneManager*)manager bridge:(RCTBridge *)bridge
 {
   
   if ((self = [super init])) {
@@ -151,7 +151,7 @@
 
         // Show animated rectangle on the touched area
         if (_defaultOnFocusComponent) {
-            self.camFocus = [[RCTCameraFocusSquare alloc]initWithFrame:CGRectMake(touchPoint.x-40, touchPoint.y-40, 80, 80)];
+            self.camFocus = [[RCTCameraFocusSquareStandalone alloc]initWithFrame:CGRectMake(touchPoint.x-40, touchPoint.y-40, 80, 80)];
             [self.camFocus setBackgroundColor:[UIColor clearColor]];
             [self addSubview:self.camFocus];
             [self.camFocus setNeedsDisplay];

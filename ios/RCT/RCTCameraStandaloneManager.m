@@ -1,5 +1,5 @@
-#import "RCTCameraManager.h"
-#import "RCTCamera.h"
+#import "RCTCameraStandaloneManager.h"
+#import "RCTCameraStandalone.h"
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTUtils.h>
@@ -9,16 +9,16 @@
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <AVFoundation/AVFoundation.h>
 #import <ImageIO/ImageIO.h>
-#import "RCTSensorOrientationChecker.h"
+#import "RCTSensorOrientationCheckerStandalone.h"
 
-@interface RCTCameraManager ()
+@interface RCTCameraStandaloneManager ()
 
-@property (strong, nonatomic) RCTSensorOrientationChecker * sensorOrientationChecker;
+@property (strong, nonatomic) RCTSensorOrientationCheckerStandalone * sensorOrientationChecker;
 @property (assign, nonatomic) NSInteger* flashMode;
 
 @end
 
-@implementation RCTCameraManager
+@implementation RCTCameraStandaloneManager
 
 RCT_EXPORT_MODULE();
 
@@ -333,7 +333,7 @@ RCT_CUSTOM_VIEW_PROPERTY(captureAudio, BOOL, RCTCamera) {
 
     self.sessionQueue = dispatch_queue_create("cameraManagerQueue", DISPATCH_QUEUE_SERIAL);
 
-    self.sensorOrientationChecker = [RCTSensorOrientationChecker new];
+    self.sensorOrientationChecker = [RCTSensorOrientationCheckerStandalone new];
   }
   return self;
 }
@@ -503,9 +503,9 @@ RCT_EXPORT_METHOD(setZoom:(CGFloat)zoomFactor) {
       self.metadataOutput = metadataOutput;
     }
 
-    __weak RCTCameraManager *weakSelf = self;
+    __weak RCTCameraStandaloneManager *weakSelf = self;
     [self setRuntimeErrorHandlingObserver:[NSNotificationCenter.defaultCenter addObserverForName:AVCaptureSessionRuntimeErrorNotification object:self.session queue:nil usingBlock:^(NSNotification *note) {
-      RCTCameraManager *strongSelf = weakSelf;
+      RCTCameraStandaloneManager *strongSelf = weakSelf;
       dispatch_async(strongSelf.sessionQueue, ^{
         // Manually restarting the session since it must have been stopped due to an error.
         [strongSelf.session startRunning];
@@ -1031,7 +1031,7 @@ didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL
   {
     [self.camera.camFocus removeFromSuperview];
   }
-  self.camera.camFocus = [[RCTCameraFocusSquare alloc]initWithFrame:CGRectMake([self.view center].x-80, [self.view center].y-80, 160, 160)];
+  self.camera.camFocus = [[RCTCameraFocusSquareStandalone alloc]initWithFrame:CGRectMake([self.view center].x-80, [self.view center].y-80, 160, 160)];
   [self.camera.camFocus setBackgroundColor:[UIColor clearColor]];
   [self.view addSubview:self.camera.camFocus];
   [self.camera.camFocus setNeedsDisplay];

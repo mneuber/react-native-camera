@@ -3,13 +3,13 @@
 #import <React/RCTBridgeModule.h>
 #import <UIKit/UIKit.h>
 
-#import "FaceDetectorManagerMlkit.h"
+#import "FaceDetectorStandaloneManagerMlkit.h"
 #import "BarcodeDetectorStandaloneManagerMlkit.h"
 #import "LabelDetectorManagerMlkit.h"
 #import "TextDetectorManager.h"
 
 @class RNCamera;
-@class RNCustomWhiteBalanceSettings;
+@class RNCustomWhiteBalanceSettingsStandalone;
 
 @interface RNCamera : UIView <AVCaptureMetadataOutputObjectsDelegate,
                               AVCaptureFileOutputRecordingDelegate,
@@ -38,7 +38,7 @@
 @property(copy, nonatomic) NSDictionary *autoFocusPointOfInterest;
 @property(assign, nonatomic) float focusDepth;
 @property(assign, nonatomic) NSInteger whiteBalance;
-@property(nonatomic, strong) RNCustomWhiteBalanceSettings *customWhiteBalanceSettings;
+@property(nonatomic, strong) RNCustomWhiteBalanceSettingsStandalone *customWhiteBalanceSettings;
 @property(assign, nonatomic) float exposure;
 @property(assign, nonatomic) float exposureIsoMin;
 @property(assign, nonatomic) float exposureIsoMax;

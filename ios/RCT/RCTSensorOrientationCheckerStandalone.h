@@ -11,7 +11,7 @@
 
 typedef void (^RCTSensorCallback) (UIInterfaceOrientation orientation);
 
-@interface RCTSensorOrientationChecker : NSObject
+@interface RCTSensorOrientationCheckerStandalone : NSObject
 
 @property (assign, nonatomic) UIInterfaceOrientation orientation;
 

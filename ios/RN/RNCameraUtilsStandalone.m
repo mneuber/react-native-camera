@@ -5,9 +5,9 @@
 //  Created by Joao Guilherme Daros Fidelis on 19/01/18.
 //
 
-#import "RNCameraUtils.h"
+#import "RNCameraUtilsStandalone.h"
 
-@implementation RNCameraUtils
+@implementation RNCameraUtilsStandalone
 
 # pragma mark - Camera utilities
 

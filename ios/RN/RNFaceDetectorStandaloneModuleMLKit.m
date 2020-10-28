@@ -1,4 +1,4 @@
-#import "RNFaceDetectorModuleMLKit.h"
+#import "RNFaceDetectorStandaloneModuleMLKit.h"
 #if __has_include(<FirebaseMLVision/FirebaseMLVision.h>)
 #import "RNFileSystem.h"
 #import "RNImageUtils.h"
@@ -118,7 +118,7 @@ RCT_EXPORT_METHOD(detectFaces:(nonnull NSDictionary *)options
 
 @end
 #else
-@implementation RNFaceDetectorModuleMLKit
+@implementation RNFaceDetectorStandaloneModuleMLKit
 
 @synthesize bridge = _bridge;
 

@@ -1,19 +1,19 @@
 #import "RNCamera.h"
-#import "RNCameraUtils.h"
-#import "RNImageUtils.h"
-#import "RNFileSystem.h"
+#import "RNCameraUtilsStandalone.h"
+#import "RNImageUtilsStandalone.h"
+#import "RNFileSystemStandalone.h"
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 #import <React/UIView+React.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "RNSensorOrientationChecker.h"
-#import "RNCustomWhiteBalanceSettings.h"
+#import "RNSensorOrientationCheckerStandalone.h"
+#import "RNCustomWhiteBalanceSettingsStandalone.h"
 
 @interface RNCamera ()
 
 @property (nonatomic, weak) RCTBridge *bridge;
-@property (nonatomic,strong) RNSensorOrientationChecker * sensorOrientationChecker;
+@property (nonatomic,strong) RNSensorOrientationCheckerStandalone * sensorOrientationChecker;
 
 @property (nonatomic,strong) UIPinchGestureRecognizer *pinchGestureRecognizer;
 @property (nonatomic, strong) RCTPromiseResolveBlock videoRecordedResolve;
@@ -65,7 +65,7 @@ BOOL _sessionInterrupted = NO;
         self.bridge = bridge;
         self.session = [AVCaptureSession new];
         self.sessionQueue = dispatch_queue_create("cameraQueue", DISPATCH_QUEUE_SERIAL);
-        self.sensorOrientationChecker = [RNSensorOrientationChecker new];
+        self.sensorOrientationChecker = [RNSensorOrientationCheckerStandalone new];
         self.textDetector = [self createTextDetector];
         self.faceDetector = [self createFaceDetectorMlKit];
         self.barcodeDetector = [self createBarcodeDetectorMlKit];
@@ -317,10 +317,10 @@ BOOL _sessionInterrupted = NO;
 {
     AVCaptureDevice *captureDevice;
     if(self.cameraId != nil){
-        captureDevice = [RNCameraUtils deviceWithCameraId:self.cameraId];
+        captureDevice = [RNCameraUtilsStandalone deviceWithCameraId:self.cameraId];
     }
     else{
-        captureDevice = [RNCameraUtils deviceWithMediaType:AVMediaTypeVideo preferringPosition:self.presetCamera];
+        captureDevice = [RNCameraUtilsStandalone deviceWithMediaType:AVMediaTypeVideo preferringPosition:self.presetCamera];
     }
     return captureDevice;
 
@@ -344,7 +344,7 @@ BOOL _sessionInterrupted = NO;
 {
     // Default video quality AVCaptureSessionPresetHigh if non is provided
     AVCaptureSessionPreset preset =
-    ([self defaultVideoQuality]) ? [RNCameraUtils captureSessionPresetForVideoResolution:[[self defaultVideoQuality] integerValue]] : AVCaptureSessionPresetHigh;
+    ([self defaultVideoQuality]) ? [RNCameraUtilsStandalone captureSessionPresetForVideoResolution:[[self defaultVideoQuality] integerValue]] : AVCaptureSessionPresetHigh;
 
     return preset;
 }
@@ -613,7 +613,7 @@ BOOL _sessionInterrupted = NO;
             [device setWhiteBalanceMode:AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance];
         } else {
             AVCaptureWhiteBalanceTemperatureAndTintValues temperatureAndTint = {
-                .temperature = [RNCameraUtils temperatureForWhiteBalance:self.whiteBalance],
+                .temperature = [RNCameraUtilsStandalone temperatureForWhiteBalance:self.whiteBalance],
                 .tint = 0,
             };
             AVCaptureWhiteBalanceGains rgbGains = [device deviceWhiteBalanceGainsForTemperatureAndTintValues:temperatureAndTint];
@@ -790,19 +790,19 @@ BOOL _sessionInterrupted = NO;
                 }
                 CGRect cropRect = CGRectMake(0, 0, CGImageGetWidth(takenCGImage), CGImageGetHeight(takenCGImage));
                 CGRect croppedSize = AVMakeRectWithAspectRatioInsideRect(previewSize, cropRect);
-                takenImage = [RNImageUtils cropImage:takenImage toRect:croppedSize];
+                takenImage = [RNImageUtilsStandalone cropImage:takenImage toRect:croppedSize];
 
                 // apply other image settings
                 bool resetOrientation = NO;
                 if ([options[@"mirrorImage"] boolValue]) {
-                    takenImage = [RNImageUtils mirrorImage:takenImage];
+                    takenImage = [RNImageUtilsStandalone mirrorImage:takenImage];
                 }
                 if ([options[@"forceUpOrientation"] boolValue]) {
-                    takenImage = [RNImageUtils forceUpOrientation:takenImage];
+                    takenImage = [RNImageUtilsStandalone forceUpOrientation:takenImage];
                     resetOrientation = YES;
                 }
                 if ([options[@"width"] integerValue]) {
-                    takenImage = [RNImageUtils scaleImage:takenImage toWidth:[options[@"width"] integerValue]];
+                    takenImage = [RNImageUtilsStandalone scaleImage:takenImage toWidth:[options[@"width"] integerValue]];
                     resetOrientation = YES;
                 }
 
@@ -922,11 +922,11 @@ BOOL _sessionInterrupted = NO;
                         path = options[@"path"];
                     }
                     else{
-                        path = [RNFileSystem generatePathInDirectory:[[RNFileSystem cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
+                        path = [RNFileSystemStandalone generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
                     }
 
                     if (![options[@"doNotSave"] boolValue]) {
-                        response[@"uri"] = [RNImageUtils writeImage:destData toPath:path];
+                        response[@"uri"] = [RNImageUtilsStandalone writeImage:destData toPath:path];
                     }
                     response[@"width"] = @(takenImage.size.width);
                     response[@"height"] = @(takenImage.size.height);
@@ -1038,7 +1038,7 @@ BOOL _sessionInterrupted = NO;
     // video preset will be cleanedup/restarted once capture is done
     // with a camera cleanup call
     if (options[@"quality"]) {
-        AVCaptureSessionPreset newQuality = [RNCameraUtils captureSessionPresetForVideoResolution:(RNCameraVideoResolution)[options[@"quality"] integerValue]];
+        AVCaptureSessionPreset newQuality = [RNCameraUtilsStandalone captureSessionPresetForVideoResolution:(RNCameraVideoResolution)[options[@"quality"] integerValue]];
         if (self.session.sessionPreset != newQuality) {
             [self updateSessionPreset:newQuality];
         }
@@ -1177,7 +1177,7 @@ BOOL _sessionInterrupted = NO;
             path = options[@"path"];
         }
         else {
-            path = [RNFileSystem generatePathInDirectory:[[RNFileSystem cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".mov"];
+            path = [RNFileSystemStandalone generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".mov"];
         }
 
         if ([options[@"mirrorVideo"] boolValue]) {
@@ -1479,7 +1479,7 @@ BOOL _sessionInterrupted = NO;
             interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
         });
 
-        AVCaptureVideoOrientation orientation = [RNCameraUtils videoOrientationForInterfaceOrientation:interfaceOrientation];
+        AVCaptureVideoOrientation orientation = [RNCameraUtilsStandalone videoOrientationForInterfaceOrientation:interfaceOrientation];
 
 
         [self.session beginConfiguration];
@@ -1703,7 +1703,7 @@ BOOL _sessionInterrupted = NO;
 - (void)changePreviewOrientation:(UIInterfaceOrientation)orientation
 {
     __weak typeof(self) weakSelf = self;
-    AVCaptureVideoOrientation videoOrientation = [RNCameraUtils videoOrientationForInterfaceOrientation:orientation];
+    AVCaptureVideoOrientation videoOrientation = [RNCameraUtilsStandalone videoOrientationForInterfaceOrientation:orientation];
     dispatch_async(dispatch_get_main_queue(), ^{
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf && strongSelf.previewLayer.connection.isVideoOrientationSupported) {
@@ -1974,7 +1974,7 @@ BOOL _sessionInterrupted = NO;
 
     // Export
     AVAssetExportSession* exportSession = [AVAssetExportSession exportSessionWithAsset:videoAsset presetName:AVAssetExportPreset640x480];
-    NSString* filePath = [RNFileSystem generatePathInDirectory:[[RNFileSystem cacheDirectoryPath] stringByAppendingString:@"CameraFlip"] withExtension:@".mp4"];
+    NSString* filePath = [RNFileSystemStandalone generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingString:@"CameraFlip"] withExtension:@".mp4"];
     NSURL* outputURL = [NSURL fileURLWithPath:filePath];
     [exportSession setOutputURL:outputURL];
     [exportSession setOutputFileType:AVFileTypeMPEG4];
@@ -2250,7 +2250,7 @@ BOOL _sessionInterrupted = NO;
     if (canSubmitForFaceDetection || canSubmitForTextDetection || canSubmitForBarcodeDetection || canSubmitForLabelDetection) {
         CGSize previewSize = CGSizeMake(_previewLayer.frame.size.width, _previewLayer.frame.size.height);
         NSInteger position = self.videoCaptureDeviceInput.device.position;
-        UIImage *image = [RNCameraUtils convertBufferToUIImage:sampleBuffer previewSize:previewSize position:position];
+        UIImage *image = [RNCameraUtilsStandalone convertBufferToUIImage:sampleBuffer previewSize:previewSize position:position];
         // take care of the fact that preview dimensions differ from the ones of the image that we submit for text detection
         float scaleX = _previewLayer.frame.size.width / image.size.width;
         float scaleY = _previewLayer.frame.size.height / image.size.height;
@@ -2294,7 +2294,7 @@ BOOL _sessionInterrupted = NO;
             }
 
             if (self.invertImageData) {
-                image = [RNImageUtils invertColors:image];
+                image = [RNImageUtilsStandalone invertColors:image];
             }
             
             [self.barcodeDetector findBarcodesInFrame:image scaleX:scaleX scaleY:scaleY completed:^(NSArray * barcodes) {

@@ -1,4 +1,4 @@
-#import "FaceDetectorManagerMlkit.h"
+#import "FaceDetectorStandaloneManagerMlkit.h"
 #import <React/RCTConvert.h>
 #if __has_include(<MLKitFaceDetection/MLKitFaceDetection.h>)
 
@@ -269,10 +269,10 @@
 @end
 #else
 
-@interface FaceDetectorManagerMlkit ()
+@interface FaceDetectorStandaloneManagerMlkit ()
 @end
 
-@implementation FaceDetectorManagerMlkit
+@implementation FaceDetectorStandaloneManagerMlkit
 
 - (instancetype)init {
  self = [super init];

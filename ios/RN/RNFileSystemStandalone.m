@@ -5,9 +5,9 @@
 //  Created by Joao Guilherme Daros Fidelis on 19/01/18.
 //
 
-#import "RNFileSystem.h"
+#import "RNFileSystemStandalone.h"
 
-@implementation RNFileSystem
+@implementation RNFileSystemStandalone
 
 + (BOOL)ensureDirExistsWithPath:(NSString *)path
 {
@@ -26,7 +26,7 @@
 + (NSString *)generatePathInDirectory:(NSString *)directory withExtension:(NSString *)extension
 {
     NSString *fileName = [[[NSUUID UUID] UUIDString] stringByAppendingString:extension];
-    [RNFileSystem ensureDirExistsWithPath:directory];
+    [RNFileSystemStandalone ensureDirExistsWithPath:directory];
     return [directory stringByAppendingPathComponent:fileName];
 }
 

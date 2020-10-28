@@ -1,6 +1,6 @@
 #import "BarcodeDetectorStandaloneManagerMlkit.h"
 #import <React/RCTConvert.h>
-#import "RNFileSystem.h"
+#import "RNFileSystemStandalone.h"
 #if __has_include(<MLKitBarcodeScanning/MLKitBarcodeScanning.h>)
 
 @interface BarcodeDetectorManagerMlkit ()
