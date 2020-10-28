@@ -385,7 +385,7 @@ RCT_REMAP_METHOD(takePicture,
                 path = options[@"path"];
             }
             else{
-                path = [RNFileSystem generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
+                path = [RNFileSystemStandalone generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
             }
             UIImage *generatedPhoto = [RNImageUtilsStandalone generatePhotoOfSize:CGSizeMake(200, 200)];
             BOOL useFastMode = options[@"fastMode"] && [options[@"fastMode"] boolValue];
