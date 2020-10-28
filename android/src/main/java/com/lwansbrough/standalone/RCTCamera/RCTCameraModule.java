@@ -3,10 +3,9 @@
  * Android video recording support by Marc Johnson (me@marc.mn) 4/2016
  */
 
-package com.lwansbrough.RCTCamera;
+package com.lwansbrough.standalone.RCTCamera;
 
 import android.content.ContentValues;
-import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.media.*;
 import android.net.Uri;

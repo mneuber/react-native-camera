@@ -14,7 +14,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.uimanager.UIManagerModule;
-import com.google.android.cameraview.CameraView;
+import com.google.android.standalone.cameraview.CameraView;
 import com.google.zxing.Result;
 import org.reactnative.camera.standalone.events.*;
 import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;

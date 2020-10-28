@@ -2,7 +2,7 @@
  * Created by rpopovici on 23/03/16.
  */
 
-package com.lwansbrough.RCTCamera;
+package com.lwansbrough.standalone.RCTCamera;
 
 import android.content.Context;
 import android.hardware.Sensor;

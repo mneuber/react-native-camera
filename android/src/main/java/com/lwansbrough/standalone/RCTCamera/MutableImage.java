@@ -1,4 +1,4 @@
-package com.lwansbrough.RCTCamera;
+package com.lwansbrough.standalone.RCTCamera;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

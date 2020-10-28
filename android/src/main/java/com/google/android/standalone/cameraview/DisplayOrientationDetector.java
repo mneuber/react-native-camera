@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.cameraview;
+package com.google.android.standalone.cameraview;
 
 import android.content.Context;
 import android.util.SparseIntArray;

@@ -1,4 +1,4 @@
-package com.lwansbrough.RCTCamera;
+package com.lwansbrough.standalone.RCTCamera;
 
 import androidx.annotation.Nullable;
 

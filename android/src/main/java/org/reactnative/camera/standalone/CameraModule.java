@@ -8,12 +8,12 @@ import com.facebook.react.bridge.*;
 import com.facebook.react.uimanager.NativeViewHierarchyManager;
 import com.facebook.react.uimanager.UIBlock;
 import com.facebook.react.uimanager.UIManagerModule;
-import com.google.android.cameraview.AspectRatio;
+import com.google.android.standalone.cameraview.AspectRatio;
 import com.google.zxing.BarcodeFormat;
 import org.reactnative.standalone.barcodedetector.BarcodeFormatUtils;
 import org.reactnative.camera.standalone.utils.ScopedContext;
 import org.reactnative.standalone.facedetector.RNFaceDetector;
-import com.google.android.cameraview.Size;
+import com.google.android.standalone.cameraview.Size;
 
 import javax.annotation.Nullable;
 import java.io.File;
