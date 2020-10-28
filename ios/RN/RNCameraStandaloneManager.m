@@ -178,7 +178,7 @@ RCT_EXPORT_VIEW_PROPERTY(onTouch, RCTDirectEventBlock);
 #endif
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RNCameraStandalone)
 {
     NSInteger newType = [RCTConvert NSInteger:json];
     if (view.presetCamera != newType) {
@@ -187,7 +187,7 @@ RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RNCamera)
     }
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(cameraId, NSString, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(cameraId, NSString, RNCameraStandalone)
 {
     NSString *newId = [RCTConvert NSString:json];
 
@@ -200,49 +200,49 @@ RCT_CUSTOM_VIEW_PROPERTY(cameraId, NSString, RNCamera)
     }
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(flashMode, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(flashMode, NSInteger, RNCameraStandalone)
 {
     [view setFlashMode:[RCTConvert NSInteger:json]];
     [view updateFlashMode];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(autoFocus, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(autoFocus, NSInteger, RNCameraStandalone)
 {
     [view setAutoFocus:[RCTConvert NSInteger:json]];
     [view updateFocusMode];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(autoFocusPointOfInterest, NSDictionary, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(autoFocusPointOfInterest, NSDictionary, RNCameraStandalone)
 {
     [view setAutoFocusPointOfInterest:[RCTConvert NSDictionary:json]];
     [view updateAutoFocusPointOfInterest];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(focusDepth, NSNumber, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(focusDepth, NSNumber, RNCameraStandalone)
 {
     [view setFocusDepth:[RCTConvert float:json]];
     [view updateFocusDepth];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(useNativeZoom, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(useNativeZoom, BOOL, RNCameraStandalone)
 {
     view.useNativeZoom=[RCTConvert BOOL:json];
     [view setupOrDisablePinchZoom];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(zoom, NSNumber, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(zoom, NSNumber, RNCameraStandalone)
 {
     [view setZoom:[RCTConvert CGFloat:json]];
     [view updateZoom];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(maxZoom, NSNumber, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(maxZoom, NSNumber, RNCameraStandalone)
 {
     [view setMaxZoom:[RCTConvert CGFloat:json]];
     [view updateZoom];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(whiteBalance, id, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(whiteBalance, id, RNCameraStandalone)
 {
     if ([json isKindOfClass: [NSDictionary class]]) {
         NSDictionary *params = [RCTConvert NSDictionary:json];
@@ -260,104 +260,104 @@ RCT_CUSTOM_VIEW_PROPERTY(whiteBalance, id, RNCamera)
     [view updateWhiteBalance];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(exposure, NSNumber, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(exposure, NSNumber, RNCameraStandalone)
 {
     [view setExposure:[RCTConvert float:json]];
     [view updateExposure];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(pictureSize, NSString *, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(pictureSize, NSString *, RNCameraStandalone)
 {
     [view setPictureSize:[[self class] pictureSizes][[RCTConvert NSString:json]]];
     [view updatePictureSize];
 }
 
 
-RCT_CUSTOM_VIEW_PROPERTY(faceDetectorEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(faceDetectorEnabled, BOOL, RNCameraStandalone)
 {
     view.canDetectFaces = [RCTConvert BOOL:json];
     [view setupOrDisableFaceDetector];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(trackingEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(trackingEnabled, BOOL, RNCameraStandalone)
 {
     [view updateTrackingEnabled:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(faceDetectionMode, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(faceDetectionMode, NSInteger, RNCameraStandalone)
 {
     [view updateFaceDetectionMode:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(faceDetectionLandmarks, NSString, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(faceDetectionLandmarks, NSString, RNCameraStandalone)
 {
     [view updateFaceDetectionLandmarks:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(faceDetectionClassifications, NSString, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(faceDetectionClassifications, NSString, RNCameraStandalone)
 {
     [view updateFaceDetectionClassifications:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(barCodeScannerEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(barCodeScannerEnabled, BOOL, RNCameraStandalone)
 {
 
     view.isReadingBarCodes = [RCTConvert BOOL:json];
     [view setupOrDisableBarcodeScanner];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RNCameraStandalone)
 {
     [view setBarCodeTypes:[RCTConvert NSArray:json]];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeType, NSString, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeType, NSString, RNCameraStandalone)
 {
     [view updateGoogleVisionBarcodeType:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeMode, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeMode, NSInteger, RNCameraStandalone)
 {
     [view updateGoogleVisionBarcodeMode:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeDetectorEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(googleVisionBarcodeDetectorEnabled, BOOL, RNCameraStandalone)
 {
     view.canDetectBarcodes = [RCTConvert BOOL:json];
     [view setupOrDisableBarcodeDetector];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(textRecognizerEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(textRecognizerEnabled, BOOL, RNCameraStandalone)
 {
 
     view.canReadText = [RCTConvert BOOL:json];
     [view setupOrDisableTextDetector];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(labelDetectorEnabled, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(labelDetectorEnabled, BOOL, RNCameraStandalone)
 {
     view.canDetectLabels = [RCTConvert BOOL:json];
     [view setupOrDisableLabelDetector];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(captureAudio, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(captureAudio, BOOL, RNCameraStandalone)
 {
     [view setCaptureAudio:[RCTConvert BOOL:json]];
     [view updateCaptureAudio];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(keepAudioSession, BOOL, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(keepAudioSession, BOOL, RNCameraStandalone)
 {
     [view setKeepAudioSession:[RCTConvert BOOL:json]];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(rectOfInterest, CGRect, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(rectOfInterest, CGRect, RNCameraStandalone)
 {
     [view setRectOfInterest: [RCTConvert CGRect:json]];
     [view updateRectOfInterest];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(defaultVideoQuality, NSInteger, RNCamera)
+RCT_CUSTOM_VIEW_PROPERTY(defaultVideoQuality, NSInteger, RNCameraStandalone)
 {
     [view setDefaultVideoQuality: [NSNumber numberWithInteger:[RCTConvert NSInteger:json]]];
 }
