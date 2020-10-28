@@ -1,4 +1,4 @@
-#import "RNCamera.h"
+#import "RNCameraStandalone.h"
 #import "RNCameraUtilsStandalone.h"
 #import "RNImageUtilsStandalone.h"
 #import "RNFileSystemStandalone.h"
@@ -10,7 +10,7 @@
 #import "RNSensorOrientationCheckerStandalone.h"
 #import "RNCustomWhiteBalanceSettingsStandalone.h"
 
-@interface RNCamera ()
+@interface RNCameraStandalone ()
 
 @property (nonatomic, weak) RCTBridge *bridge;
 @property (nonatomic,strong) RNSensorOrientationCheckerStandalone * sensorOrientationChecker;
@@ -51,7 +51,7 @@
 
 @end
 
-@implementation RNCamera
+@implementation RNCameraStandalone
 
 static NSDictionary *defaultFaceDetectorOptions = nil;
 

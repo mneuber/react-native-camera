@@ -2,7 +2,7 @@
 #import <React/RCTBridgeModule.h>
 #import <AVFoundation/AVFoundation.h>
 
-@class RNCameraManager;
+@class RNCameraStandaloneManager;
 
 static const int RNFlashModeTorch = 3;
 
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, RNCameraGoogleVisionBarcodeMode) {
     RNCameraGoogleVisionBarcodeModeInverted = 2,
 };
 
-@interface RNCameraManager : RCTViewManager <RCTBridgeModule>
+@interface RNCameraStandaloneManager : RCTViewManager <RCTBridgeModule>
 
 + (NSDictionary *)validBarCodeTypes;
 + (NSDictionary *)validCodecTypes;

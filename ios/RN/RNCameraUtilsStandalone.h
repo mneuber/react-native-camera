@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNCameraManager.h"
+#import "RNCameraStandaloneManager.h"
 
 @interface RNCameraUtilsStandalone : NSObject
 

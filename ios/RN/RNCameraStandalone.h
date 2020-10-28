@@ -8,10 +8,10 @@
 #import "LabelDetectorManagerMlkit.h"
 #import "TextDetectorManager.h"
 
-@class RNCamera;
+@class RNCameraStandalone;
 @class RNCustomWhiteBalanceSettingsStandalone;
 
-@interface RNCamera : UIView <AVCaptureMetadataOutputObjectsDelegate,
+@interface RNCameraStandalone : UIView <AVCaptureMetadataOutputObjectsDelegate,
                               AVCaptureFileOutputRecordingDelegate,
                               AVCaptureVideoDataOutputSampleBufferDelegate>
 

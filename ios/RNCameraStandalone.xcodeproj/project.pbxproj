@@ -14,8 +14,8 @@
 		4107014D1ACB732B00C6AA39 /* RCTCameraStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 410701481ACB732B00C6AA39 /* RCTCameraStandalone.m */; };
 		4107014E1ACB732B00C6AA39 /* RCTCameraStandaloneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4107014A1ACB732B00C6AA39 /* RCTCameraStandaloneManager.m */; };
 		454EBCF41B5082DC00AD0F86 /* NSMutableDictionary+ImageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 454EBCF31B5082DC00AD0F86 /* NSMutableDictionary+ImageMetadata.m */; };
-		7162BE672013EAA100FE51FF /* RNCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFCC2013C7BF006EB75A /* RNCamera.m */; };
-		7162BE682013EAA400FE51FF /* RNCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFC92013C7AE006EB75A /* RNCameraManager.m */; };
+		7162BE672013EAA100FE51FF /* RNCameraStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFCC2013C7BF006EB75A /* RNCameraStandalone.m */; };
+		7162BE682013EAA400FE51FF /* RNCameraStandaloneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFC92013C7AE006EB75A /* RNCameraStandaloneManager.m */; };
 		71C7FFD02013C7E5006EB75A /* RNCameraUtilsStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFCF2013C7E5006EB75A /* RNCameraUtilsStandalone.m */; };
 		71C7FFD32013C817006EB75A /* RNImageUtilsStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFD22013C817006EB75A /* RNImageUtilsStandalone.m */; };
 		71C7FFD62013C824006EB75A /* RNFileSystemStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FFD52013C824006EB75A /* RNFileSystemStandalone.m */; };
@@ -51,10 +51,10 @@
 		410701491ACB732B00C6AA39 /* RCTCameraStandaloneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTCameraStandaloneManager.h; sourceTree = "<group>"; };
 		4107014A1ACB732B00C6AA39 /* RCTCameraStandaloneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTCameraStandaloneManager.m; sourceTree = "<group>"; };
 		454EBCF31B5082DC00AD0F86 /* NSMutableDictionary+ImageMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ImageMetadata.m"; sourceTree = "<group>"; };
-		71C7FFC82013C7AE006EB75A /* RNCameraManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCameraManager.h; sourceTree = "<group>"; };
-		71C7FFC92013C7AE006EB75A /* RNCameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCameraManager.m; sourceTree = "<group>"; };
-		71C7FFCB2013C7BF006EB75A /* RNCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCamera.h; sourceTree = "<group>"; };
-		71C7FFCC2013C7BF006EB75A /* RNCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCamera.m; sourceTree = "<group>"; };
+		71C7FFC82013C7AE006EB75A /* RNCameraStandaloneManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCameraStandaloneManager.h; sourceTree = "<group>"; };
+		71C7FFC92013C7AE006EB75A /* RNCameraStandaloneManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCameraStandaloneManager.m; sourceTree = "<group>"; };
+		71C7FFCB2013C7BF006EB75A /* RNCameraStandalone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCameraStandalone.h; sourceTree = "<group>"; };
+		71C7FFCC2013C7BF006EB75A /* RNCameraStandalone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCameraStandalone.m; sourceTree = "<group>"; };
 		71C7FFCE2013C7E5006EB75A /* RNCameraUtilsStandalone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCameraUtilsStandalone.h; sourceTree = "<group>"; };
 		71C7FFCF2013C7E5006EB75A /* RNCameraUtilsStandalone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCameraUtilsStandalone.m; sourceTree = "<group>"; };
 		71C7FFD12013C817006EB75A /* RNImageUtilsStandalone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNImageUtilsStandalone.h; sourceTree = "<group>"; };
@@ -132,10 +132,10 @@
 				71C7FFD22013C817006EB75A /* RNImageUtilsStandalone.m */,
 				71C7FFCE2013C7E5006EB75A /* RNCameraUtilsStandalone.h */,
 				71C7FFCF2013C7E5006EB75A /* RNCameraUtilsStandalone.m */,
-				71C7FFC82013C7AE006EB75A /* RNCameraManager.h */,
-				71C7FFC92013C7AE006EB75A /* RNCameraManager.m */,
-				71C7FFCB2013C7BF006EB75A /* RNCamera.h */,
-				71C7FFCC2013C7BF006EB75A /* RNCamera.m */,
+				71C7FFC82013C7AE006EB75A /* RNCameraStandaloneManager.h */,
+				71C7FFC92013C7AE006EB75A /* RNCameraStandaloneManager.m */,
+				71C7FFCB2013C7BF006EB75A /* RNCameraStandalone.h */,
+				71C7FFCC2013C7BF006EB75A /* RNCameraStandalone.m */,
 				A7D02BC7243627E100C0EDE6 /* RNCustomWhiteBalanceSettingsStandalone.h */,
 				A7D02BC8243627E100C0EDE6 /* RNCustomWhiteBalanceSettingsStandalone.m */,
 			);
@@ -208,8 +208,8 @@
 				1354413B2487FF390024C19F /* BarcodeDetectorStandaloneManagerMlkit.m in Sources */,
 				F8393BEC21469C0000AB1995 /* RNSensorOrientationCheckerStandalone.m in Sources */,
 				71C7FFD02013C7E5006EB75A /* RNCameraUtilsStandalone.m in Sources */,
-				7162BE682013EAA400FE51FF /* RNCameraManager.m in Sources */,
-				7162BE672013EAA100FE51FF /* RNCamera.m in Sources */,
+				7162BE682013EAA400FE51FF /* RNCameraStandaloneManager.m in Sources */,
+				7162BE672013EAA100FE51FF /* RNCameraStandalone.m in Sources */,
 				9FE592B31CA3CBF500788287 /* RCTSensorOrientationCheckerStandalone.m in Sources */,
 				2647D6712256BBD5007D2F91 /* FaceDetectorStandaloneManagerMlkit.m in Sources */,
 				71C7FFD32013C817006EB75A /* RNImageUtilsStandalone.m in Sources */,
