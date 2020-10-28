@@ -37,7 +37,7 @@ RCT_EXPORT_MODULE();
   #endif
 
   if(!self.camera){
-    self.camera = [[RCTCamera alloc] initWithManager:self bridge:self.bridge];
+    self.camera = [[RCTCameraStandalone alloc] initWithManager:self bridge:self.bridge];
   }
   return self.camera;
 }
@@ -194,7 +194,7 @@ RCT_CUSTOM_VIEW_PROPERTY(aspect, NSInteger, RCTCameraStandalone) {
   self.previewLayer.videoGravity = aspectString;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RCTCameraStandalone) {
   NSInteger type = [RCTConvert NSInteger:json];
 
   self.presetCamera = type;
