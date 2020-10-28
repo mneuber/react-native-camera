@@ -1,6 +1,6 @@
-package org.reactnative.facedetector;
+package org.reactnative.standalone.facedetector;
 
-import org.reactnative.facedetector.tasks.FileFaceDetectionAsyncTask;
+import org.reactnative.standalone.facedetector.tasks.FileFaceDetectionAsyncTask;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;

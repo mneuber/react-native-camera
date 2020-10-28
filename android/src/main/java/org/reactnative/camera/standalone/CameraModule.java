@@ -10,9 +10,9 @@ import com.facebook.react.uimanager.UIBlock;
 import com.facebook.react.uimanager.UIManagerModule;
 import com.google.android.cameraview.AspectRatio;
 import com.google.zxing.BarcodeFormat;
-import org.reactnative.barcodedetector.BarcodeFormatUtils;
+import org.reactnative.standalone.barcodedetector.BarcodeFormatUtils;
 import org.reactnative.camera.standalone.utils.ScopedContext;
-import org.reactnative.facedetector.RNFaceDetector;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
 import com.google.android.cameraview.Size;
 
 import javax.annotation.Nullable;

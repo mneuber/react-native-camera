@@ -13,8 +13,8 @@ import com.google.mlkit.vision.face.Face;
 import com.google.mlkit.vision.face.FaceDetector;
 
 import org.reactnative.camera.standalone.utils.ImageDimensions;
-import org.reactnative.facedetector.FaceDetectorUtils;
-import org.reactnative.facedetector.RNFaceDetector;
+import org.reactnative.standalone.facedetector.FaceDetectorUtils;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
 
 import java.util.List;
 

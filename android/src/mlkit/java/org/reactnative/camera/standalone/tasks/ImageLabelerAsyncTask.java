@@ -1,7 +1,6 @@
 package org.reactnative.camera.standalone.tasks;
 
 //import android.graphics.Point;
-import android.graphics.Rect;
 import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
@@ -13,7 +12,7 @@ import com.google.mlkit.vision.label.ImageLabel;
 import com.google.mlkit.vision.label.ImageLabeler;
 import com.google.mlkit.vision.common.InputImage;
 
-import org.reactnative.imagelabeler.RNImageLabeler;
+import org.reactnative.standalone.imagelabeler.RNImageLabeler;
 import org.reactnative.camera.standalone.utils.ImageDimensions;
 
 import java.util.List;

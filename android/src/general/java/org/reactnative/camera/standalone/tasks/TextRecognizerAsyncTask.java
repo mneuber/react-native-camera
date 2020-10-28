@@ -15,9 +15,9 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import org.reactnative.camera.standalone.utils.ImageDimensions;
-import org.reactnative.facedetector.FaceDetectorUtils;
-import org.reactnative.frame.RNFrame;
-import org.reactnative.frame.RNFrameFactory;
+import org.reactnative.standalone.facedetector.FaceDetectorUtils;
+import org.reactnative.standalone.frame.RNFrame;
+import org.reactnative.standalone.frame.RNFrameFactory;
 
 
 public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, SparseArray<TextBlock>> {

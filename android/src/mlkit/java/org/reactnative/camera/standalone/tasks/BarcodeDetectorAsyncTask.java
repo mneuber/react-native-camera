@@ -13,8 +13,8 @@ import com.google.mlkit.vision.barcode.Barcode;
 import com.google.mlkit.vision.barcode.BarcodeScanner;
 import com.google.mlkit.vision.common.InputImage;
 
-import org.reactnative.barcodedetector.BarcodeFormatUtils;
-import org.reactnative.barcodedetector.RNBarcodeDetector;
+import org.reactnative.standalone.barcodedetector.BarcodeFormatUtils;
+import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;
 import org.reactnative.camera.standalone.utils.ImageDimensions;
 
 import java.util.List;

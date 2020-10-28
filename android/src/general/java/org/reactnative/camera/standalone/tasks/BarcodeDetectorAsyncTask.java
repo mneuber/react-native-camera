@@ -8,11 +8,11 @@ import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.google.android.gms.vision.barcode.Barcode;
 
-import org.reactnative.barcodedetector.BarcodeFormatUtils;
+import org.reactnative.standalone.barcodedetector.BarcodeFormatUtils;
 import org.reactnative.camera.standalone.utils.ImageDimensions;
-import org.reactnative.frame.RNFrame;
-import org.reactnative.frame.RNFrameFactory;
-import org.reactnative.barcodedetector.RNBarcodeDetector;
+import org.reactnative.standalone.frame.RNFrame;
+import org.reactnative.standalone.frame.RNFrameFactory;
+import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;
 
 public class BarcodeDetectorAsyncTask extends android.os.AsyncTask<Void, Void, SparseArray<Barcode>> {
 

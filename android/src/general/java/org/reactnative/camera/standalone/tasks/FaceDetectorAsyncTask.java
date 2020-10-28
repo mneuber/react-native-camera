@@ -9,10 +9,10 @@ import com.google.android.cameraview.CameraView;
 import com.google.android.gms.vision.face.Face;
 
 import org.reactnative.camera.standalone.utils.ImageDimensions;
-import org.reactnative.facedetector.FaceDetectorUtils;
-import org.reactnative.frame.RNFrame;
-import org.reactnative.frame.RNFrameFactory;
-import org.reactnative.facedetector.RNFaceDetector;
+import org.reactnative.standalone.facedetector.FaceDetectorUtils;
+import org.reactnative.standalone.frame.RNFrame;
+import org.reactnative.standalone.frame.RNFrameFactory;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
 
 public class FaceDetectorAsyncTask extends android.os.AsyncTask<Void, Void, SparseArray<Face>> {
   private byte[] mImageData;

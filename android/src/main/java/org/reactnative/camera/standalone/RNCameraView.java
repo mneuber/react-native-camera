@@ -26,11 +26,11 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;
 import com.google.zxing.Result;
-import org.reactnative.barcodedetector.RNBarcodeDetector;
+import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;
 import org.reactnative.camera.standalone.tasks.*;
 import org.reactnative.camera.standalone.utils.RNFileUtils;
-import org.reactnative.facedetector.RNFaceDetector;
-import org.reactnative.imagelabeler.RNImageLabeler;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
+import org.reactnative.standalone.imagelabeler.RNImageLabeler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

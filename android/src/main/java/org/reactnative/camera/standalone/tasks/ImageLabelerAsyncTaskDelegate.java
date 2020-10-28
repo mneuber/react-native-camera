@@ -1,7 +1,7 @@
 package org.reactnative.camera.standalone.tasks;
 
 import com.facebook.react.bridge.WritableArray;
-import org.reactnative.imagelabeler.RNImageLabeler;
+import org.reactnative.standalone.imagelabeler.RNImageLabeler;
 
 public interface ImageLabelerAsyncTaskDelegate {
 

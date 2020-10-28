@@ -6,7 +6,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import org.reactnative.camera.standalone.CameraViewManager;
-import org.reactnative.barcodedetector.RNBarcodeDetector;
+import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;
 
 public class BarcodeDetectionErrorEvent extends Event<BarcodeDetectionErrorEvent> {
 

@@ -1,11 +1,11 @@
-package org.reactnative.barcodedetector;
+package org.reactnative.standalone.barcodedetector;
 
 import android.content.Context;
 import android.util.SparseArray;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import org.reactnative.camera.standalone.utils.ImageDimensions;
-import org.reactnative.frame.RNFrame;
+import org.reactnative.standalone.frame.RNFrame;
 
 public class RNBarcodeDetector {
 

@@ -1,4 +1,4 @@
-package org.reactnative.barcodedetector;
+package org.reactnative.standalone.barcodedetector;
 
 import android.util.SparseArray;
 import com.google.android.gms.vision.barcode.Barcode;

@@ -17,9 +17,9 @@ import com.facebook.react.uimanager.UIManagerModule;
 import com.google.android.cameraview.CameraView;
 import com.google.zxing.Result;
 import org.reactnative.camera.standalone.events.*;
-import org.reactnative.barcodedetector.RNBarcodeDetector;
-import org.reactnative.facedetector.RNFaceDetector;
-import org.reactnative.imagelabeler.RNImageLabeler;
+import org.reactnative.standalone.barcodedetector.RNBarcodeDetector;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
+import org.reactnative.standalone.imagelabeler.RNImageLabeler;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

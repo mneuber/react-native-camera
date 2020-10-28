@@ -1,4 +1,4 @@
-package org.reactnative.imagelabeler;
+package org.reactnative.standalone.imagelabeler;
 
 import android.content.Context;
 import android.util.Log;

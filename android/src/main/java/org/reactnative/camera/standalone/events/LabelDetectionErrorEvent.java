@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import org.reactnative.camera.standalone.CameraViewManager;
-import org.reactnative.imagelabeler.RNImageLabeler;
+import org.reactnative.standalone.imagelabeler.RNImageLabeler;
 
 public class LabelDetectionErrorEvent extends Event<LabelDetectionErrorEvent> {
   private static final Pools.SynchronizedPool<LabelDetectionErrorEvent> EVENTS_POOL = new Pools.SynchronizedPool<>(3);

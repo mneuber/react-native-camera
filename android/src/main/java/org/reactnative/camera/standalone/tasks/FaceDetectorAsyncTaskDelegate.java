@@ -1,6 +1,6 @@
 package org.reactnative.camera.standalone.tasks;
 
-import org.reactnative.facedetector.RNFaceDetector;
+import org.reactnative.standalone.facedetector.RNFaceDetector;
 
 import com.facebook.react.bridge.WritableArray;
 

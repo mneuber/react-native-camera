@@ -1,4 +1,4 @@
-package org.reactnative.facedetector;
+package org.reactnative.standalone.facedetector;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import org.reactnative.camera.standalone.utils.ImageDimensions;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
-import org.reactnative.frame.RNFrame;
+import org.reactnative.standalone.frame.RNFrame;
 
 public class RNFaceDetector {
   public static int ALL_CLASSIFICATIONS = FaceDetector.ALL_CLASSIFICATIONS;

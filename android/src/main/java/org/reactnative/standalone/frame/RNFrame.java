@@ -1,4 +1,4 @@
-package org.reactnative.frame;
+package org.reactnative.standalone.frame;
 
 import org.reactnative.camera.standalone.utils.ImageDimensions;
 import com.google.android.gms.vision.Frame;

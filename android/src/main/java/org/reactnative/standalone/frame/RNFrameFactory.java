@@ -1,4 +1,4 @@
-package org.reactnative.frame;
+package org.reactnative.standalone.frame;
 
 import android.graphics.Bitmap;
 import android.graphics.ImageFormat;

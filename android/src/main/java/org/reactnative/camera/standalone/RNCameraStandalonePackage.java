@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.ViewManager;
 import com.lwansbrough.RCTCamera.RCTCameraModule;
 import com.lwansbrough.RCTCamera.RCTCameraViewManager;
 
-import org.reactnative.facedetector.FaceDetectorModule;
+import org.reactnative.standalone.facedetector.FaceDetectorModule;
 
 import java.util.Arrays;
 import java.util.Collections;

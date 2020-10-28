@@ -1,4 +1,4 @@
-package org.reactnative.barcodedetector;
+package org.reactnative.standalone.barcodedetector;
 
 import android.content.Context;
 import android.util.Log;

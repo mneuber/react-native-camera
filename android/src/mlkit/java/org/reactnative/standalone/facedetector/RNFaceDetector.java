@@ -1,4 +1,4 @@
-package org.reactnative.facedetector;
+package org.reactnative.standalone.facedetector;
 
 import android.content.Context;
 import android.util.Log;
