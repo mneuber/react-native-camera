@@ -358,7 +358,7 @@ public class RNCameraView extends CameraView implements LifecycleEventListener, 
 
     if (mBarCodeTypes != null) {
       for (String code : mBarCodeTypes) {
-        String formatString = (String) CameraModule.VALID_BARCODE_TYPES.get(code);
+        String formatString = (String) CameraModuleStandalone.VALID_BARCODE_TYPES.get(code);
         if (formatString != null) {
           decodeFormats.add(BarcodeFormat.valueOf(formatString));
         }

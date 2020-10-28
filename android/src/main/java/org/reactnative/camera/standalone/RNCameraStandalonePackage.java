@@ -5,10 +5,10 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.lwansbrough.standalone.RCTCamera.RCTCameraModule;
+import com.lwansbrough.standalone.RCTCamera.RCTCameraModuleStandalone;
 import com.lwansbrough.standalone.RCTCamera.RCTCameraViewManager;
 
-import org.reactnative.standalone.facedetector.FaceDetectorModule;
+import org.reactnative.standalone.facedetector.FaceDetectorModuleStandalone;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,9 +22,9 @@ public class RNCameraStandalonePackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
         return Arrays.<NativeModule>asList(
-                new RCTCameraModule(reactApplicationContext),
-                new CameraModule(reactApplicationContext),
-                new FaceDetectorModule(reactApplicationContext)
+                new RCTCameraModuleStandalone(reactApplicationContext),
+                new CameraModuleStandalone(reactApplicationContext),
+                new FaceDetectorModuleStandalone(reactApplicationContext)
         );
     }
 

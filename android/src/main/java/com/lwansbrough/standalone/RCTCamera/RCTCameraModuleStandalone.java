@@ -35,9 +35,9 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
-public class RCTCameraModule extends ReactContextBaseJavaModule
+public class RCTCameraModuleStandalone extends ReactContextBaseJavaModule
     implements MediaRecorder.OnInfoListener, MediaRecorder.OnErrorListener, LifecycleEventListener {
-    private static final String TAG = "RCTCameraModule";
+    private static final String TAG = "RCTCameraModuleStandalone";
 
     public static final int RCT_CAMERA_ASPECT_FILL = 0;
     public static final int RCT_CAMERA_ASPECT_FIT = 1;
@@ -82,7 +82,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
     private ReadableMap mRecordingOptions;
     private Boolean mSafeToCapture = true;
 
-    public RCTCameraModule(ReactApplicationContext reactContext) {
+    public RCTCameraModuleStandalone(ReactApplicationContext reactContext) {
         super(reactContext);
         _reactContext = reactContext;
         _sensorOrientationChecker = new RCTSensorOrientationChecker(_reactContext);
@@ -133,7 +133,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
 
     @Override
     public String getName() {
-        return "RCTCameraModule";
+        return "RCTCameraModuleStandalone";
     }
 
     @Nullable

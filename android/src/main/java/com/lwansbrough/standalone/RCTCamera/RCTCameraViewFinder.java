@@ -154,8 +154,8 @@ class RCTCameraViewFinder extends TextureView implements TextureView.SurfaceText
                 _camera = RCTCamera.getInstance().acquireCameraInstance(_cameraType);
                 Camera.Parameters parameters = _camera.getParameters();
 
-                final boolean isCaptureModeStill = (_captureMode == RCTCameraModule.RCT_CAMERA_CAPTURE_MODE_STILL);
-                final boolean isCaptureModeVideo = (_captureMode == RCTCameraModule.RCT_CAMERA_CAPTURE_MODE_VIDEO);
+                final boolean isCaptureModeStill = (_captureMode == RCTCameraModuleStandalone.RCT_CAMERA_CAPTURE_MODE_STILL);
+                final boolean isCaptureModeVideo = (_captureMode == RCTCameraModuleStandalone.RCT_CAMERA_CAPTURE_MODE_VIDEO);
                 if (!isCaptureModeStill && !isCaptureModeVideo) {
                     throw new RuntimeException("Unsupported capture mode:" + _captureMode);
                 }
@@ -408,7 +408,7 @@ class RCTCameraViewFinder extends TextureView implements TextureView.SurfaceText
                     throw new Exception();
                 }
 
-                ReactContext reactContext = RCTCameraModule.getReactContextSingleton();
+                ReactContext reactContext = RCTCameraModuleStandalone.getReactContextSingleton();
                 WritableMap event = Arguments.createMap();
                 WritableArray resultPoints = Arguments.createArray();
                 ResultPoint[] points = result.getResultPoints();

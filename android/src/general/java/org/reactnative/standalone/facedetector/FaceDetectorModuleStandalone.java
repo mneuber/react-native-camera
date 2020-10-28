@@ -13,12 +13,12 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
-public class FaceDetectorModule extends ReactContextBaseJavaModule {
-  private static final String TAG = "RNFaceDetector";
+public class FaceDetectorModuleStandalone extends ReactContextBaseJavaModule {
+  private static final String TAG = "RNFaceDetectorStandalone";
 //  private ScopedContext mScopedContext;
 private static ReactApplicationContext mScopedContext;
 
-  public FaceDetectorModule(ReactApplicationContext reactContext) {
+  public FaceDetectorModuleStandalone(ReactApplicationContext reactContext) {
     super(reactContext);
     mScopedContext = reactContext;
   }

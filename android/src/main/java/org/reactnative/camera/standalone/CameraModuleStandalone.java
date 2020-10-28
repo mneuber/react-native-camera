@@ -27,8 +27,8 @@ import java.util.Set;
 import java.util.SortedSet;
 
 
-public class CameraModule extends ReactContextBaseJavaModule {
-  private static final String TAG = "CameraModule";
+public class CameraModuleStandalone extends ReactContextBaseJavaModule {
+  private static final String TAG = "CameraModuleStandalone";
 
   private ScopedContext mScopedContext;
   static final int VIDEO_2160P = 0;
@@ -64,7 +64,7 @@ public class CameraModule extends ReactContextBaseJavaModule {
         }
       });
 
-  public CameraModule(ReactApplicationContext reactContext) {
+  public CameraModuleStandalone(ReactApplicationContext reactContext) {
     super(reactContext);
     mScopedContext = new ScopedContext(reactContext);
   }
@@ -75,7 +75,7 @@ public class CameraModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "RNCameraModule";
+    return "RNCameraModuleStandalone";
   }
 
   @Nullable

@@ -380,17 +380,17 @@ public class RNCameraViewHelper {
 
   private static int getCamcorderProfileQualityFromCameraModuleConstant(int quality) {
     switch (quality) {
-      case CameraModule.VIDEO_2160P:
+      case CameraModuleStandalone.VIDEO_2160P:
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
           return CamcorderProfile.QUALITY_2160P;
         }
-      case CameraModule.VIDEO_1080P:
+      case CameraModuleStandalone.VIDEO_1080P:
         return CamcorderProfile.QUALITY_1080P;
-      case CameraModule.VIDEO_720P:
+      case CameraModuleStandalone.VIDEO_720P:
         return CamcorderProfile.QUALITY_720P;
-      case CameraModule.VIDEO_480P:
+      case CameraModuleStandalone.VIDEO_480P:
         return CamcorderProfile.QUALITY_480P;
-      case CameraModule.VIDEO_4x3:
+      case CameraModuleStandalone.VIDEO_4x3:
         return CamcorderProfile.QUALITY_480P;
     }
     return CamcorderProfile.QUALITY_HIGH;
@@ -401,7 +401,7 @@ public class RNCameraViewHelper {
     int camcorderQuality = getCamcorderProfileQualityFromCameraModuleConstant(quality);
     if (CamcorderProfile.hasProfile(camcorderQuality)) {
       profile = CamcorderProfile.get(camcorderQuality);
-      if (quality == CameraModule.VIDEO_4x3) {
+      if (quality == CameraModuleStandalone.VIDEO_4x3) {
         profile.videoFrameWidth = 640;
       }
     }
