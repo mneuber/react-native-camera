@@ -5,8 +5,8 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.lwansbrough.RCTCamera.RCTCameraModule;
-import com.lwansbrough.RCTCamera.RCTCameraViewManager;
+import com.lwansbrough.standalone.RCTCamera.RCTCameraModule;
+import com.lwansbrough.standalone.RCTCamera.RCTCameraViewManager;
 
 import org.reactnative.standalone.facedetector.FaceDetectorModule;
 

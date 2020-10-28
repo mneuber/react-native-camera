@@ -7,8 +7,8 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.google.android.cameraview.AspectRatio;
-import com.google.android.cameraview.Size;
+import com.google.android.standalone.cameraview.AspectRatio;
+import com.google.android.standalone.cameraview.Size;
 
 import java.util.ArrayList;
 import java.util.List;
