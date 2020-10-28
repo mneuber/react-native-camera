@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class RCTCameraViewManager extends ViewGroupManager<RCTCameraView> {
-    private static final String REACT_CLASS = "RCTCamera";
+    private static final String REACT_CLASS = "RCTCameraStandalone";
 
     public static final int COMMAND_STOP_PREVIEW = 1;
     public static final int COMMAND_START_PREVIEW = 2;

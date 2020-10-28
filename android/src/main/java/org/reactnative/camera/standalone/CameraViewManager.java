@@ -45,7 +45,7 @@ public class CameraViewManager extends ViewGroupManager<RNCameraView> {
     }
   }
 
-  private static final String REACT_CLASS = "RNCamera";
+  private static final String REACT_CLASS = "RNCameraStandalone";
 
   @Override
   public void onDropViewInstance(RNCameraView view) {

@@ -328,7 +328,7 @@ const RecordAudioPermissionStatusEnum: {
 };
 
 const CameraManager: Object = NativeModules.RNCameraManager ||
-  NativeModules.RNCameraModule || {
+  NativeModules.RNCameraModuleStandalone || {
     stubbed: true,
     Type: {
       back: 1,
@@ -730,7 +730,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   };
 
-  _onSubjectAreaChanged = e => {
+  _onSubjectAreaChanged = (e) => {
     if (this.props.onSubjectAreaChanged) {
       this.props.onSubjectAreaChanged(e);
     }
@@ -927,7 +927,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
 
 export const Constants = Camera.Constants;
 
-const RNCamera = requireNativeComponent('RNCamera', Camera, {
+const RNCamera = requireNativeComponent('RNCameraStandalone', Camera, {
   nativeOnly: {
     accessibilityComponentType: true,
     accessibilityLabel: true,
