@@ -141,7 +141,7 @@ RCT_EXPORT_VIEW_PROPERTY(defaultOnFocusComponent, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(onFocusChanged, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(onZoomChanged, BOOL);
 
-RCT_CUSTOM_VIEW_PROPERTY(captureQuality, NSInteger, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(captureQuality, NSInteger, RCTCameraStandalone) {
   NSInteger quality = [RCTConvert NSInteger:json];
   NSString *qualityString;
   switch (quality) {
@@ -175,7 +175,7 @@ RCT_CUSTOM_VIEW_PROPERTY(captureQuality, NSInteger, RCTCamera) {
   [self setCaptureQuality:qualityString];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(aspect, NSInteger, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(aspect, NSInteger, RCTCameraStandalone) {
   NSInteger aspect = [RCTConvert NSInteger:json];
   NSString *aspectString;
   switch (aspect) {
@@ -243,7 +243,7 @@ RCT_CUSTOM_VIEW_PROPERTY(type, NSInteger, RCTCamera) {
   [self initializeCaptureSessionInput:AVMediaTypeVideo];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(flashMode, NSInteger, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(flashMode, NSInteger, RCTCameraStandalone) {
     self.flashMode = [RCTConvert NSInteger:json];
     [self setFlashMode];
 }
@@ -273,7 +273,7 @@ RCT_CUSTOM_VIEW_PROPERTY(flashMode, NSInteger, RCTCamera) {
     [device unlockForConfiguration];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(torchMode, NSInteger, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(torchMode, NSInteger, RCTCameraStandalone) {
   dispatch_async(self.sessionQueue, ^{
     NSInteger *torchMode = [RCTConvert NSInteger:json];
     AVCaptureDevice *device = [self.videoCaptureDeviceInput device];
@@ -289,28 +289,28 @@ RCT_CUSTOM_VIEW_PROPERTY(torchMode, NSInteger, RCTCamera) {
   });
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(keepAwake, BOOL, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(keepAwake, BOOL, RCTCameraStandalone) {
   BOOL enabled = [RCTConvert BOOL:json];
   [UIApplication sharedApplication].idleTimerDisabled = enabled;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(mirrorImage, BOOL, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(mirrorImage, BOOL, RCTCameraStandalone) {
   self.mirrorImage = [RCTConvert BOOL:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(mirrorVideo, BOOL, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(mirrorVideo, BOOL, RCTCameraStandalone) {
     self.mirrorVideo = [RCTConvert BOOL:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(cropToPreview, BOOL, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(cropToPreview, BOOL, RCTCameraStandalone) {
     self.cropToPreview = [RCTConvert BOOL:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTCameraStandalone) {
   self.barCodeTypes = [RCTConvert NSArray:json];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(captureAudio, BOOL, RCTCamera) {
+RCT_CUSTOM_VIEW_PROPERTY(captureAudio, BOOL, RCTCameraStandalone) {
   BOOL captureAudio = [RCTConvert BOOL:json];
   if (captureAudio) {
     RCTLog(@"capturing audio");
