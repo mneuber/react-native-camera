@@ -385,9 +385,9 @@ RCT_REMAP_METHOD(takePicture,
                 path = options[@"path"];
             }
             else{
-                path = [RNFileSystem generatePathInDirectory:[[RNFileSystem cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
+                path = [RNFileSystem generatePathInDirectory:[[RNFileSystemStandalone cacheDirectoryPath] stringByAppendingPathComponent:@"Camera"] withExtension:@".jpg"];
             }
-            UIImage *generatedPhoto = [RNImageUtils generatePhotoOfSize:CGSizeMake(200, 200)];
+            UIImage *generatedPhoto = [RNImageUtilsStandalone generatePhotoOfSize:CGSizeMake(200, 200)];
             BOOL useFastMode = options[@"fastMode"] && [options[@"fastMode"] boolValue];
             if (useFastMode) {
                 resolve(nil);
@@ -397,7 +397,7 @@ RCT_REMAP_METHOD(takePicture,
 
             NSData *photoData = UIImageJPEGRepresentation(generatedPhoto, quality);
             if (![options[@"doNotSave"] boolValue]) {
-                response[@"uri"] = [RNImageUtils writeImage:photoData toPath:path];
+                response[@"uri"] = [RNImageUtilsStandalone writeImage:photoData toPath:path];
             }
             response[@"width"] = @(generatedPhoto.size.width);
             response[@"height"] = @(generatedPhoto.size.height);
