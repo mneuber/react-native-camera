@@ -1,4 +1,4 @@
-#import "BarcodeDetectorManagerMlkit.h"
+#import "BarcodeDetectorStandaloneManagerMlkit.h"
 #import <React/RCTConvert.h>
 #import "RNFileSystem.h"
 #if __has_include(<MLKitBarcodeScanning/MLKitBarcodeScanning.h>)
@@ -401,10 +401,10 @@
 @end
 #else
 
-@interface BarcodeDetectorManagerMlkit ()
+@interface BarcodeDetectorStandaloneManagerMlkit ()
 @end
 
-@implementation BarcodeDetectorManagerMlkit
+@implementation BarcodeDetectorStandaloneManagerMlkit
 
 - (instancetype)init {
  self = [super init];

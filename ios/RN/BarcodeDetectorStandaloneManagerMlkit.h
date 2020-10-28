@@ -5,7 +5,7 @@
   #import <MLKitBarcodeScanning/MLKitBarcodeScanning.h>
 #endif
 
-@interface BarcodeDetectorManagerMlkit : NSObject
+@interface BarcodeDetectorStandaloneManagerMlkit : NSObject
 typedef void(^postRecognitionBlock)(NSArray *barcodes);
 
 - (instancetype)init;

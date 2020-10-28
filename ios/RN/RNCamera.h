@@ -4,7 +4,7 @@
 #import <UIKit/UIKit.h>
 
 #import "FaceDetectorManagerMlkit.h"
-#import "BarcodeDetectorManagerMlkit.h"
+#import "BarcodeDetectorStandaloneManagerMlkit.h"
 #import "LabelDetectorManagerMlkit.h"
 #import "TextDetectorManager.h"
 
