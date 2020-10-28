@@ -853,7 +853,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     if (this.state.isAuthorized || this.hasFaCC()) {
       return (
         <View style={style}>
-          <RNCamera
+          <RNCameraStandalone
             {...nativeProps}
             style={StyleSheet.absoluteFill}
             ref={this._setReference}
@@ -927,7 +927,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
 
 export const Constants = Camera.Constants;
 
-const RNCamera = requireNativeComponent('RNCameraStandalone', Camera, {
+const RNCameraStandalone = requireNativeComponent('RNCameraStandalone', Camera, {
   nativeOnly: {
     accessibilityComponentType: true,
     accessibilityLabel: true,
