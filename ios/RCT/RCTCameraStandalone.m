@@ -8,7 +8,7 @@
 #import <React/UIView+React.h>
 
 #import <AVFoundation/AVFoundation.h>
-#import "CameraFocusSquare.h"
+#import "CameraFocusSquareStandalone.h"
 
 @interface RCTCameraStandalone ()
 
