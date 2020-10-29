@@ -21,7 +21,7 @@ static NSDictionary *defaultDetectorOptions = nil;
     return self;
 }
 
-RCT_EXPORT_MODULE(RNFaceDetector);
+RCT_EXPORT_MODULE(RNFaceDetectorStandalone);
 
 @synthesize bridge = _bridge;
 
