@@ -2134,7 +2134,7 @@ BOOL _sessionInterrupted = NO;
 
 -(id)createTextDetector
 {
-    Class textDetectorManagerClass = NSClassFromString(@"TextDetectorManager");
+    Class textDetectorManagerClass = NSClassFromString(@"TextDetectorStandaloneManager");
     return [[textDetectorManagerClass alloc] init];
 }
 

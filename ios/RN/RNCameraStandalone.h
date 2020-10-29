@@ -6,7 +6,7 @@
 #import "FaceDetectorStandaloneManagerMlkit.h"
 #import "BarcodeDetectorStandaloneManagerMlkit.h"
 #import "LabelDetectorManagerMlkit.h"
-#import "TextDetectorManager.h"
+#import "TextDetectorStandaloneManager.h"
 
 @class RNCameraStandalone;
 @class RNCustomWhiteBalanceSettingsStandalone;

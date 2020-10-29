@@ -2,7 +2,7 @@
   #import <MLKitVision/MLKitVision.h>
   #import <MLKitTextRecognition/MLKitTextRecognition.h>
 #endif
-  @interface TextDetectorManager : NSObject
+  @interface TextDetectorStandaloneManager : NSObject
   typedef void(^postRecognitionBlock)(NSArray *textBlocks);
 
   - (instancetype)init;

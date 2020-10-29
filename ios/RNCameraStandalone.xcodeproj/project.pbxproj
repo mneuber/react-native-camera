@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0314E39D1B661A460092D183 /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314E39C1B661A460092D183 /* CameraFocusSquare.m */; };
+		0314E39D1B661A460092D183 /* CameraFocusSquareStandalone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314E39C1B661A460092D183 /* CameraFocusSquareStandalone.m */; };
 		1354413B2487FF390024C19F /* BarcodeDetectorStandaloneManagerMlkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1354413A2487FF390024C19F /* BarcodeDetectorStandaloneManagerMlkit.m */; };
 		2647D6712256BBD5007D2F91 /* FaceDetectorStandaloneManagerMlkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2647D6702256BBD5007D2F91 /* FaceDetectorStandaloneManagerMlkit.m */; };
 		2647D6742256BBE8007D2F91 /* RNFaceDetectorStandaloneModuleMLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2647D6722256BBE8007D2F91 /* RNFaceDetectorStandaloneModuleMLKit.m */; };
@@ -37,8 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0314E39B1B661A0C0092D183 /* CameraFocusSquare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFocusSquare.h; sourceTree = "<group>"; };
-		0314E39C1B661A460092D183 /* CameraFocusSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocusSquare.m; sourceTree = "<group>"; };
+		0314E39B1B661A0C0092D183 /* CameraFocusSquareStandalone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFocusSquareStandalone.h; sourceTree = "<group>"; };
+		0314E39C1B661A460092D183 /* CameraFocusSquareStandalone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocusSquareStandalone.m; sourceTree = "<group>"; };
 		135441392487FF390024C19F /* BarcodeDetectorStandaloneManagerMlkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeDetectorStandaloneManagerMlkit.h; sourceTree = "<group>"; };
 		1354413A2487FF390024C19F /* BarcodeDetectorStandaloneManagerMlkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeDetectorStandaloneManagerMlkit.m; sourceTree = "<group>"; };
 		2647D66F2256BBD5007D2F91 /* FaceDetectorStandaloneManagerMlkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetectorStandaloneManagerMlkit.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			children = (
 				9FE592B11CA3CBF500788287 /* RCTSensorOrientationCheckerStandalone.h */,
 				9FE592B21CA3CBF500788287 /* RCTSensorOrientationCheckerStandalone.m */,
-				0314E39C1B661A460092D183 /* CameraFocusSquare.m */,
-				0314E39B1B661A0C0092D183 /* CameraFocusSquare.h */,
+				0314E39C1B661A460092D183 /* CameraFocusSquareStandalone.m */,
+				0314E39B1B661A0C0092D183 /* CameraFocusSquareStandalone.h */,
 				C5627D22245D10A100B761CF /* NSMutableDictionary+ImageMetadata.h */,
 				454EBCF31B5082DC00AD0F86 /* NSMutableDictionary+ImageMetadata.m */,
 				410701471ACB732B00C6AA39 /* RCTCameraStandalone.h */,
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2647D6742256BBE8007D2F91 /* RNFaceDetectorStandaloneModuleMLKit.m in Sources */,
-				0314E39D1B661A460092D183 /* CameraFocusSquare.m in Sources */,
+				0314E39D1B661A460092D183 /* CameraFocusSquareStandalone.m in Sources */,
 				454EBCF41B5082DC00AD0F86 /* NSMutableDictionary+ImageMetadata.m in Sources */,
 				71C7FFD62013C824006EB75A /* RNFileSystemStandalone.m in Sources */,
 				A7D02BC9243627E100C0EDE6 /* RNCustomWhiteBalanceSettingsStandalone.m in Sources */,
