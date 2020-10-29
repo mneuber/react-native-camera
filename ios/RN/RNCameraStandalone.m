@@ -1221,7 +1221,7 @@ BOOL _sessionInterruptedStandalone = NO;
 
             }
             else{
-                reject(@"E_VIDEO_CAPTURE_FAILED", !_recordRequested ? @"Recording request cancelled." : @"Camera is not ready.", nil);
+                reject(@"E_VIDEO_CAPTURE_FAILED", !_recordRequestedStandalone ? @"Recording request cancelled." : @"Camera is not ready.", nil);
                 [self cleanupCamera];
             }
 
