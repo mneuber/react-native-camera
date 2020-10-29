@@ -55,8 +55,8 @@
 
 static NSDictionary *defaultFaceDetectorOptions = nil;
 
-BOOL _recordRequested = NO;
-BOOL _sessionInterrupted = NO;
+BOOL _recordRequestedStandalone = NO;
+BOOL _sessionInterruptedStandalone = NO;
 
 
 - (id)initWithBridge:(RCTBridge *)bridge
@@ -96,8 +96,8 @@ BOOL _sessionInterrupted = NO;
         self.isFocusedOnPoint = NO;
         self.isExposedOnPoint = NO;
         self.invertImageData = true;
-        _recordRequested = NO;
-        _sessionInterrupted = NO;
+        _recordRequestedStandalone = NO;
+        _sessionInterruptedStandalone = NO;
 
         // we will do other initialization after
         // the view is loaded.
@@ -1201,13 +1201,13 @@ BOOL _sessionInterrupted = NO;
 
         // we will use this flag to stop recording
         // if it was requested to stop before it could even start
-        _recordRequested = YES;
+        _recordRequestedStandalone = YES;
 
         dispatch_after(popTime, self.sessionQueue, ^(void){
 
             // our session might have stopped in between the timeout
             // so make sure it is still valid, otherwise, error and cleanup
-            if(self.movieFileOutput != nil && self.videoCaptureDeviceInput != nil && _recordRequested){
+            if(self.movieFileOutput != nil && self.videoCaptureDeviceInput != nil && _recordRequestedStandalone){
                 NSURL *outputURL = [[NSURL alloc] initFileURLWithPath:path];
                 [self.movieFileOutput startRecordingToOutputFileURL:outputURL recordingDelegate:self];
                 self.videoRecordedResolve = resolve;
@@ -1226,7 +1226,7 @@ BOOL _sessionInterrupted = NO;
             }
 
             // reset our flag
-            _recordRequested = NO;
+            _recordRequestedStandalone = NO;
         });
 
 
@@ -1240,8 +1240,8 @@ BOOL _sessionInterrupted = NO;
             [self.movieFileOutput stopRecording];
             [self onRecordingEnd:@{}];
         } else {
-            if(_recordRequested){
-                _recordRequested = NO;
+            if(_recordRequestedStandalone){
+                _recordRequestedStandalone = NO;
             }
             else{
                 RCTLogWarn(@"Video is not recording.");
@@ -1304,7 +1304,7 @@ BOOL _sessionInterrupted = NO;
         }
         [self setupOrDisableBarcodeScanner];
 
-        _sessionInterrupted = NO;
+        _sessionInterruptedStandalone = NO;
         [self.session startRunning];
         [self onReady:nil];
     });
@@ -1639,7 +1639,7 @@ BOOL _sessionInterrupted = NO;
 - (void)sessionWasInterrupted:(NSNotification *)notification
 {
     // Mark session interruption
-    _sessionInterrupted = YES;
+    _sessionInterruptedStandalone = YES;
 
     // Turn on video interrupted if our session is interrupted
     // for any reason
@@ -1648,7 +1648,7 @@ BOOL _sessionInterrupted = NO;
     }
 
     // prevent any video recording start that we might have on the way
-    _recordRequested = NO;
+    _recordRequestedStandalone = NO;
 
     // get event info and fire RN event if our session was interrupted
     // due to audio being taken away.
@@ -1673,14 +1673,14 @@ BOOL _sessionInterrupted = NO;
 {
     //NSLog(@"sessionDidStartRunning Was interrupted? %d", _sessionInterrupted);
 
-    if(_sessionInterrupted){
+    if(_sessionInterruptedStandalone){
         // resume flash value since it will be resetted / turned off
         dispatch_async(self.sessionQueue, ^{
             [self updateFlashMode];
         });
     }
 
-    _sessionInterrupted = NO;
+    _sessionInterruptedStandalone = NO;
 }
 
 - (void)sessionRuntimeError:(NSNotification *)notification
@@ -1688,7 +1688,7 @@ BOOL _sessionInterrupted = NO;
     // Manually restarting the session since it must
     // have been stopped due to an error.
     dispatch_async(self.sessionQueue, ^{
-         _sessionInterrupted = NO;
+         _sessionInterruptedStandalone = NO;
         [self.session startRunning];
         [self onReady:nil];
     });
