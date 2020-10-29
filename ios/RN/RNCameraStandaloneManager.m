@@ -38,7 +38,7 @@ RCT_EXPORT_VIEW_PROPERTY(onTouch, RCTDirectEventBlock);
 
 - (UIView *)view
 {
-    return [[RNCamera alloc] initWithBridge:self.bridge];
+    return [[RNCameraStandalone alloc] initWithBridge:self.bridge];
 }
 
 - (NSDictionary *)constantsToExport
@@ -368,9 +368,9 @@ RCT_REMAP_METHOD(takePicture,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, RNCamera *> *viewRegistry) {
-        RNCamera *view = viewRegistry[reactTag];
-        if (![view isKindOfClass:[RNCamera class]]) {
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, RNCameraStandalone *> *viewRegistry) {
+        RNCameraStandalone *view = viewRegistry[reactTag];
+        if (![view isKindOfClass:[RNCameraStandalone class]]) {
             RCTLogError(@"Invalid view returned from registry, expecting RNCamera, got: %@", view);
         } else {
 #if TARGET_IPHONE_SIMULATOR
@@ -426,8 +426,8 @@ RCT_REMAP_METHOD(record,
     reject(@"E_RECORDING_FAILED", @"Video recording is not supported on a simulator.", nil);
     return;
 #endif
-    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, RNCamera *> *viewRegistry) {
-        RNCamera *view = viewRegistry[reactTag];
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, RNCameraStandalone *> *viewRegistry) {
+        RNCameraStandalone *view = viewRegistry[reactTag];
         if (![view isKindOfClass:[RNCamera class]]) {
             RCTLogError(@"Invalid view returned from registry, expecting RNCamera, got: %@", view);
         } else {
