@@ -1,13 +1,13 @@
-#import "TextDetectorManager.h"
+#import "TextDetectorStandaloneManager.h"
 #if __has_include(<MLKitTextRecognition/MLKitTextRecognition.h>)
 
-@interface TextDetectorManager ()
+@interface TextDetectorStandaloneManager ()
 @property(nonatomic, strong) MLKTextRecognizer *textRecognizer;
 @property(nonatomic, assign) float scaleX;
 @property(nonatomic, assign) float scaleY;
 @end
 
-@implementation TextDetectorManager
+@implementation TextDetectorStandaloneManager
 
 - (instancetype)init
 {
@@ -99,10 +99,10 @@
 @end
 #else
 
-@interface TextDetectorManager ()
+@interface TextDetectorStandaloneManager ()
 @end
 
-@implementation TextDetectorManager
+@implementation TextDetectorStandaloneManager
 
 - (instancetype)init
 {
